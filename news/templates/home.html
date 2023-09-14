@@ -6,13 +6,13 @@
 {% endblock %}
 
 {% block content %}
-    {% for news in news %}
+    {% for item in news %}
         <h2 class="news-title">
-            {{ news.title }}
+            {{ item.title }}
         </h2>
 
-        <span class="news-date">{{ news.created_at|date:"d/m/Y" }}</span>
-        {% if news.image %}
+        <span class="news-date">{{ item.created_at|date:"d/m/Y" }}</span>
+        {% if item.image %}
             <img src="{% static news.image.url %}" alt="Imagem relacionada à notícia" height="100" />
         {% endif %}
     {% endfor %}
