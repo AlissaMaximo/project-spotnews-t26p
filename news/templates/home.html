@@ -13,7 +13,7 @@
 
         <span class="news-date">{{ item.created_at|date:"d/m/Y" }}</span>
         {% if item.image %}
-            <img src="{% static news.image.url %}" alt="Imagem relacionada à notícia" height="100" />
+            <img src="{% static item.image.url %}" alt="Imagem relacionada à notícia" height="100" />
         {% endif %}
     {% endfor %}
 {% endblock %}
