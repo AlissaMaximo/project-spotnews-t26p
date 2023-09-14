@@ -5,6 +5,10 @@
     Página Inicial
 {% endblock %}
 
+{% block script %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
 {% block content %}
     {% for item in news %}
         <h2 class="news-title">

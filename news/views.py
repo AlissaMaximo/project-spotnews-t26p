@@ -4,7 +4,7 @@ from news.models.news_model import News
 # Create your views here.
 
 
-def home(request):
+def index(request):
     news = News.objects.all()
     context = {"news": news}
 
