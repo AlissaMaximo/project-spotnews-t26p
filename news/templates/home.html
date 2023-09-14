@@ -5,8 +5,12 @@
     Página Inicial
 {% endblock %}
 
+{% block script %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
 {% block content %}
-    {% for news in multi_news %}
+    {% for news in news %}
         <h2 class="news-title">
             {{ news.title }}
         </h2>
