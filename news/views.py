@@ -28,7 +28,8 @@ def create_category(request):
         if form.is_valid():
             form.save()
             return redirect("home-page")
-
+    else:
+        form = CategoryForm()
     context = {"form": form}
 
     return render(request, "categories_form.html", context)
