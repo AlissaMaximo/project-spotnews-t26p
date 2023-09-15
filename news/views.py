@@ -30,4 +30,5 @@ def create_category(request):
             return redirect("home-page")
 
     context = {"form": form}
+
     return render(request, "categories_form.html", context)
