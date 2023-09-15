@@ -4,8 +4,8 @@ from news.models.category_model import Categories
 
 class CategoryForm(forms.ModelForm):
     class Meta:
-        model = Categories
         fields = "__all__"
+        model = Categories
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
