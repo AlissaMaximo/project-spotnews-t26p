@@ -1,15 +1,14 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from news.models.news_model import News
-from news.forms import CategoryForm
+from news.forms import CategoryForm, NewsForm
 
 # Create your views here.
 
 
 def index(request):
     news = News.objects.all()
-    context = {"news": news}
 
-    return render(request, "home.html", context)
+    return render(request, "home.html", {"news": news})
 
 
 def news_details(request, news_id):
@@ -28,5 +27,17 @@ def create_category(request):
             form.save()
             return redirect("home-page")
 
-    context = {"form": form}
-    return render(request, "categories_form.html", context)
+    return render(request, "categories_form.html", {"form": form})
+
+
+def create_news(request):
+    form = NewsForm()
+
+    if request.method == "POST":
+        form = NewsForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+            return redirect("home-page")
+
+    return render(request, "news_form.html", {"form": form})
