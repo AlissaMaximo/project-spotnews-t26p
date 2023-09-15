@@ -24,12 +24,9 @@ def create_category(request):
 
     if request.method == "POST":
         form = CategoryForm(request.POST)
-
         if form.is_valid():
             form.save()
             return redirect("home-page")
-    else:
-        form = CategoryForm()
-    context = {"form": form}
 
+    context = {"form": form}
     return render(request, "categories_form.html", context)
