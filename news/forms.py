@@ -24,21 +24,21 @@ class NewsForm(forms.ModelForm):
             "categories",
         ]
 
-    author = forms.ModelChoiceField(
-        label="Autoria", queryset=Users.objects.all()
-    )
     title = forms.CharField(label="Título", max_length=200)
-    categories = forms.ModelMultipleChoiceField(
-        label="Categorias",
-        widget=forms.CheckboxSelectMultiple,
-        queryset=Categories.objects.all(),
-    )
     content = forms.CharField(
         label="Conteúdo",
         widget=forms.Textarea(attrs={"type": "textarea"}),
         max_length=200,
     )
+    author = forms.ModelChoiceField(
+        label="Autoria", queryset=Users.objects.all()
+    )
     created_at = forms.DateField(
         label="Criado em", widget=forms.DateTimeInput(attrs={"type": "date"})
     )
     image = forms.FileField(label="URL da Imagem", required=False)
+    categories = forms.ModelMultipleChoiceField(
+        label="Categorias",
+        widget=forms.CheckboxSelectMultiple,
+        queryset=Categories.objects.all(),
+    )
