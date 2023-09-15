@@ -3,10 +3,8 @@ from news.models.category_model import Categories
 
 
 class CategoryForm(forms.ModelForm):
-    class Meta:
-        fields = "__all__"
-        model = Categories
+    name = forms.CharField(label="Nome", max_length=200)
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields["name"].label = "Nome"
+    class Meta:
+        model = Categories
+        fields = ["name"]
