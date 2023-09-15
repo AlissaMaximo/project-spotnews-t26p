@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from news.models import Users
-from news_rest.serializers.users_serializer import UsersSerializer
+from news_rest.serializers.user_serializer import UsersSerializer
 
 
 class UsersViewSet(viewsets.ModelViewSet):
