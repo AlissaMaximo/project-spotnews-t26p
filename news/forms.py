@@ -14,7 +14,14 @@ class CategoryForm(forms.ModelForm):
 
 class NewsForm(forms.ModelForm):
     class Meta:
-        fields = "__all__"
+        fields = [
+            "title",
+            "content",
+            "author",
+            "created_at",
+            "image",
+            "categories",
+        ]
         model = News
 
     author = forms.ModelChoiceField(
